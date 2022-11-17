@@ -9,7 +9,7 @@ class encn_Cambridge_tc {
     async displayName() {
         let locale = await api.locale();
         if (locale.indexOf('CN') != -1) return '剑桥英汉双解(繁体)';
-        if (locale.indexOf('TW') != -1) return '劍橋英漢雙解(繁体)';
+        if (locale.indexOf('TW') != -1) return '劍橋辭典(繁體中文)';
         return 'Cambridge EN->CN Dictionary (TC)';
     }
 
