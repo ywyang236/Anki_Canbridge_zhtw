@@ -87,7 +87,7 @@ class encn_Cambridge_tc {
 
                     // make definition segement
                     for (const defblock of defblocks) {
-                        let eng_tran = T(defblock.querySelector('.ddef_h .def'));
+                        let eng_tran = T(defblock.querySelector(''));
                         let chn_tran = T(defblock.querySelector('.def-body .trans'));
                         if (!eng_tran) continue;
                         let definition = '';
