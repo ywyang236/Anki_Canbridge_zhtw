@@ -58,13 +58,10 @@ class encn_Cambridge_tc {
             if (readings) {
                 let reading_uk = T(readings[0]);
                 let reading_us = T(readings[1]);
-                reading = (reading_uk || reading_us) ? `UK[${reading_uk}] US[${reading_us}] ` : '';
+                reading = (reading_us) ? `${reading_us} ` : '';
             }
             let pos = T(entry.querySelector('.posgram'));
             pos = pos ? `<span class='pos'>${pos}</span>` : '';
-            audios[0] = entry.querySelector(".uk.dpron-i source");
-            audios[0] = audios[0] ? 'https://dictionary.cambridge.org' + audios[0].getAttribute('src') : '';
-            //audios[0] = audios[0].replace('https', 'http');
             audios[1] = entry.querySelector(".us.dpron-i source");
             audios[1] = audios[1] ? 'https://dictionary.cambridge.org' + audios[1].getAttribute('src') : '';
             //audios[1] = audios[1].replace('https', 'http');
@@ -220,13 +217,13 @@ class encn_Cambridge_tc {
     renderCSS() {
         let css = `
             <style>
-                div.phrasehead{margin: 2px 0;font-weight: bold;}
+                div.phrasehead{margin: 2px 0;}
                 span.star {color: #FFBB00;}
-                span.pos  {text-transform:lowercase; font-size:0.9em; margin-right:5px; padding:2px 4px; color:white; background-color:#0d47a1; border-radius:3px;}
+                span.pos  {text-transform:lowercase; font-size:0.9em; margin-right:5px; padding:2px 4px;}
                 span.tran {margin:0; padding:0;}
                 span.eng_tran {margin-right:3px; padding:0;}
                 span.chn_tran {color:#black;}
-                ul.sents {font-size:0.8em; list-style:square inside; margin:3px 0;padding:5px;background:rgba(13,71,161,0.1); border-radius:5px;}
+                ul.sents {font-size:0.8em; list-style:square inside; margin:3px 0;padding:5px;}
                 li.sent  {margin:0; padding:0;}
                 span.eng_sent {margin-right:5px;}
                 span.chn_sent {color:#black;}
