@@ -82,12 +82,14 @@ class encn_Cambridge_tc {
 
                     // make definition segement
                     for (const defblock of defblocks) {
+                        let eng_tran = T(defblock.querySelector('.ddef_h .def'));
                         let chn_tran = T(defblock.querySelector('.def-body .trans'));
+                        if (!eng_tran) continue;
+                        let definition = '';
+                        eng_tran = `<span class='eng_tran'>${eng_tran.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span>`;
                         chn_tran = `<span class='chn_tran'>${chn_tran}</span>`;
-                        let tran = `<span class='tran'>${chn_tran}</span>`;
+                        let tran = `<span class='tran'>${eng_tran}${chn_tran}</span>`;
                         definition += phrasehead ? `${phrasehead}${tran}` : `${pos}${tran}`;
-                        font-variant-east-asian: traditional;
-
 
                         // make exmaple segement
                         let examps = defblock.querySelectorAll('.def-body .examp') || [];
