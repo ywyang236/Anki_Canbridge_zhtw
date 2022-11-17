@@ -131,6 +131,7 @@ class encn_Cambridge_tc {
             let youdao = getYoudao(doc); //Combine Youdao Concise English-Chinese Dictionary to the end.
             let ydtrans = getYDTrans(doc); //Combine Youdao Translation (if any) to the end.
             return [].concat(youdao, ydtrans);
+            font-variant-east-asian: traditional;
         } catch (err) {
             return [];
         }
