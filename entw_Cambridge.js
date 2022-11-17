@@ -85,6 +85,20 @@ class encn_Cambridge_tc {
                     }
                     if (defblocks.length <= 0) continue;
 
+                    
+                    //pos change
+                    let definition = '<ul class="ec">';
+                    for (const defNode of defNodes){
+                        let pos = '';
+                        let def = T(defNode);
+                        let match = /(^.+?\.)\s/gi.exec(def);
+                        if (match && match.length > 1){
+                            pos = match[1];
+                            def = def.replace(pos, '');
+                       }
+                pos = pos ? `<span class="pos simple">${pos}</span>`:'';
+                definition += `<li class="ec">${pos}<span class="ec_chn">${def}</span></li>`;
+            }
                     // make definition segement
                     for (const defblock of defblocks) {
                         let eng_tran = T(defblock.querySelector('.ddef_h .def'));
