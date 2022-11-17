@@ -96,9 +96,11 @@ class encn_Cambridge_tc {
                             pos = match[1];
                             def = def.replace(pos, '');
                        }
-                pos = pos ? `<span class="pos simple">${pos}</span>`:'';
-                definition += `<li class="ec">${pos}<span class="ec_chn">${def}</span></li>`;
-            }
+                        pos = pos ? `<span class="pos simple">${pos}</span>`:'';
+                        definition += `<li class="ec">${pos}<span class="ec_chn">${def}</span></li>`;
+                      }
+                    
+                    
                     // make definition segement
                     for (const defblock of defblocks) {
                         let eng_tran = T(defblock.querySelector('.ddef_h .def'));
@@ -108,7 +110,11 @@ class encn_Cambridge_tc {
                         eng_tran = `<span class='eng_tran'>${eng_tran.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span>`;
                         chn_tran = `<span class='chn_tran'>${chn_tran}</span>`;
                         let tran = `<span class='tran'>${chn_tran}</span>`;
-                        definition += phrasehead ? `${phrasehead}${tran}` : `${pos}${tran}`;
+                        definition += phrasehead ? `${phrasehead}${tran}` : `${pos simple}${tran}`;
+                        
+                        pos = pos ? `<span class="pos simple">${pos}</span>`:'';
+                        definition += `<li class="ec">${pos}<span class="ec_chn">${def}</span></li>`;
+                      }
 
                         // make exmaple segement
                         let examps = defblock.querySelectorAll('.def-body .examp') || [];
