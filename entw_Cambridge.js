@@ -58,7 +58,7 @@ class encn_Cambridge_tc {
             if (readings) {
                 let reading_uk = T(readings[0]);
                 let reading_us = T(readings[1]);
-                reading = (reading_us) ? `${reading_us} ` : '';
+                reading = (reading_us) ? `/${reading_us}/ ` : '';
             }
             let pos = T(entry.querySelector('.posgram'));
             pos = pos ? `<span class='pos'>${pos}</span>` : '';
